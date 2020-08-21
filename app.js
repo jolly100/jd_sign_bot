@@ -58,8 +58,9 @@ async function start() {
     if (fs.existsSync(path)) {
       content = fs.readFileSync(path, "utf8");
     }
-    await sendNotify("京东签到-" + new Date().toLocaleDateString(), content);
-    console.log('发送结果完毕')
+//    await sendNotify("京东签到-" + new Date().toLocaleDateString(), content);
+      await sendNotify("京东签到-" + new Date().toLocaleDateString() + "-" + (KEY.substring(KEY.lastIndexOf("pt_pin")+7, KEY.lastIndexOf(";"))), content);
+      console.log('发送结果完毕')
   }
 }
 
